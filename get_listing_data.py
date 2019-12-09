@@ -41,7 +41,6 @@ def get_listing_data(listing_url):
     # Gets listing's short description text
     listing_short_description = soup.find("div", {"class": "kratek"}).text
 
-
     # Gets listing's year of construction from short description
     listing_year = listing_short_description.split(" l. ")[1]
     listing_year = listing_year.split(",")[0]
