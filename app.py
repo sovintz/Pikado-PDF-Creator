@@ -14,14 +14,14 @@ def index():
 @app.route("/pregled", methods=["POST", "GET"])
 def pregled():
     if request.method == "POST":
-        #try:
+        try:
             # get listing url
-        listing = get_listing_data(request.form["listingURL"])
-        return render_template("pregled.html", listing=listing)
-        '''except:
+            listing = get_listing_data(request.form["listingURL"])
+            return render_template("pregled.html", listing=listing)
+        except:
             # redirect to home page
             print("Error pregled")
-            return redirect("/")'''
+            return redirect("/")
 
 @app.route("/pdf", methods=["POST", "GET"])
 def pdf():
