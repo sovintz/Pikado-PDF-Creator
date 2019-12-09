@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAAAAAAAAAAAADSwAQA0sAEANLABETSwAVM0sAGVNLABuDSwAbk0sAGYNLABVzSwARQ0sAEANLABAAAAAAAAAAAAAAAAADSwAQA0sAECNLABQzSwAbs0sAH1NLAB/zOwAP8zsAD/NLAB/zSwAfY0sAHBNLABSjSwAQM0sAEAAAAAADSwAQA0sAEBNLABXTSwAek0sAH/Mq8A/zmyCP9HuBn/SLga/zqyCf8yrwD/M7AB/zSwAe00sAFnNLABAjSwAQA0sAEANLABQDSwAeczsAD/OLEH/3XJU//B57L/4fPZ/+L02v/E6Lb/e8xa/zqyCf8zsAD/NLAB7TSwAUs0sAEANLABDjSwAbU0sAH/N7EG/5fWff/2/PT///////////////////////j89/+g2oj/OrIJ/zOwAP80sAHANLABFDSwAUo0sAHxMa8A/3HITv/1+/L//////+346f+246T/suGe/+f24f//////+Pz2/3vMWv8yrwD/NLAB9jSwAVg0sAGINLAB/zexBf+55Kj///////H67v90yVH/Oq0E/zmtA/9kwz7/5/bi///////E6LX/OrIJ/zSwAP80sAGYNLABqDOwAP9CtRP/2fDP///////H6bn/PLAK/4GHKf+HhSz/Oa0E/7Lhn///////4fPZ/0i4Gv8zsAD/NLABuDSwAaczsAD/QrUS/9jwzv//////y+u+/z6xDf98iib/gYcp/zqtBv+246X//////+Dz2P9HuBn/M7AA/zSwAbc0sAGENLAB/zaxBP+246T///////b78/+Ez2b/PrEL/zywCf90yVH/7vjq///////A57H/ObII/zSwAf80sAGVNLABRTSwAe8xrwD/bMZI//L67///////9fvy/8vrvv/H6bn/8fnt///////2+/P/dclT/zKvAP80sAH0NLABUzSwAQw0sAGuNLAB/zaxBP+O03L/8/rw///////////////////////1+/P/l9Z9/zixBv80sAH/NLABujSwARE0sAEANLABOTSwAeIzsAH/NrEF/2zGR/+346X/2fDP/9rw0P+65Kn/cchO/zexBv8zsAD/NLAB6DSwAUM0sAEANLABADSwAQA0sAFTNLAB4jSwAf8xrwD/NrEF/0K1Ev9CthP/N7EF/zGvAP80sAH/NLAB6DSwAV00sAEBNLABAAAAAAA0sAEANLABATSwATk0sAGvNLAB8DSwAf8zsAD/M7AA/zSwAf80sAHyNLABtTSwAUA0sAEBNLABAAAAAAAAAAAAAAAAADSwAQA0sAEANLABDDSwAUU0sAGFNLABqDSwAak0sAGINLABSTSwAQ40sAEANLABAAAAAAAAAAAA8A8AAMADAACAAQAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEAAMABAADAAwAA8A8AAA==" rel="icon" type="image/x-icon" />
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary shadow-sm">
+
+        <a class="navbar-brand" href="/">
+            <img src="https://pikado.si/wp-content/uploads/2018/07/tarca.png"  height="40" class="d-inline-block align-center" alt="">
+            PDF Creator
+        </a>
+
+        <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsable">
+            <span class= "navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="collapsable">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">O nas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="btn btn-outline-warning" role="button">Vpis</a>
+                </li>
+            </ul>
+        </div>-->
+    </nav>
+    <!-- Navbar end -->
+
+    <!-- Content -->
+    <main class="min-vh-100">
+        {% block body %}{% endblock %}
+    </main>
+    <!-- Content end -->
+
+    <!-- Footer-->
+    <footer class="footer-copyright font-small text-center bg-dark text-muted py-3 shadow-sm">© Avtor: Lan Sovinc | Vse pravice pridržane.</footer>
+    <!--Footer end -->
+
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+     <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

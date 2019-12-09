@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Pikado PDF Creator</title>
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1>Pikado Realestate PDF Creator</h1>
+        <div class=" row shadow-sm rounded">
+            <div class="col p-3">
+                <form action="/pregled" method="POST">
+                    <div class="form-group">
+                        <label for="listingURL">Nepremičnine.net povezava:</label>
+                        <input type="text" class="form-control" name="listingURL" id="listingURL" placeholder="https://www.nepremicnine.net/..." required>
+                    </div>
+                    <input type="submit" value="Ustvari" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

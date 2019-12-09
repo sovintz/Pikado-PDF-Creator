@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Pikado PDF Creator</title>
+{% endblock %}
+
+{% block body %}
+    <div class="container my-5">
+        <form action="/pdf" method="POST">
+            <div class="form-row p-3 mb-3 shadow-sm rounded">
+                <label for="title">Naslov ponudbe:</label>
+                <input type="text" class="form-control" name="title" id="title" value="{{ listing.title }}">
+                <label for="offer">Številka ponudbe:</label>
+                <input type="text" class="form-control" name="offer" id="offer">
+                <label for="type_o">Tip ponudbe:</label>
+                <input type="text" class="form-control" name="type_o" id="type_o" value="{{ listing.type_o }}">
+                <label for="size">Velikost nepremičnine:</label>
+                <input type="text" class="form-control" name="size" id="size" value="{{ listing.size }}">
+                <label for="size_l">Velikost zemljišča:</label>
+                <input type="text" class="form-control" name="size_l" id="size_l" value="{{ listing.size_l }}">
+                <label for="year">Leto izgradnje:</label>
+                <input type="text" class="form-control" name="year" id="year" value="{{ listing.year }}">
+                <label for="price">Cena:</label>
+                <input type="text" class="form-control" name="price" id="price" value="{{ listing.price }}">
+            </div>
+            <div class="form-row p-3 mb-3 shadow-sm rounded">
+                <label for="short">Uredite kratek opis:</label>
+                <textarea rows="5" class="form-control" name="short" id="short">{{ listing.short}}</textarea>
+            </div>
+            <div class="form-row p-3 mb-3 shadow-sm rounded">
+                <label for="long">Uredite dolg opis:</label>
+                <textarea rows="10" class="form-control" name="long" id="long">{{ listing.long}}</textarea>
+            </div>
+            <div class="form-row p-3 mb-3 shadow-sm rounded" align="center">
+                <div class="col-xl-12">
+                    <label for="images">Izberite slike:</label>
+                </div>
+                {% for image in listing.images_array %}
+                    <div class="col-lg-4 col-md-6">
+                    <input type="checkbox" name="image" value="{{ image }}" checked/>
+                    <label for="image{{ loop.index }}"><img src="{{ image }}" style="width: 50%; height: 50%" /></label>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="form-row mb-5">
+                <input type="submit" value="Ustvari PDF" class="btn btn-primary btn-lg">
+            </div>
+        </form>
+
+    </div>
+{% endblock %}
