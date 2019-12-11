@@ -23,6 +23,7 @@ def get_listing_data(listing_url):
     # Creates new request with the given listing URL
     listing_page = urllib.request.urlopen(listing_url)
     soup = BeautifulSoup(listing_page, 'html.parser')
+    print("nardi juhco")
 
     # Gets listing's heading get basic  info
     listing_heading = soup.find("h1", {"class": "podrobnosti-naslov"}).text
