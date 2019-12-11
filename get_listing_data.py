@@ -21,7 +21,10 @@ def get_listing_data(listing_url):
     }
 
     # Creates new request with the given listing URL
+    print("pred urlib")
     listing_page = urllib.request.urlopen(listing_url)
+    print("po urlib")
+    print("pred juhco")
     soup = BeautifulSoup(listing_page, 'html.parser')
     print("nardi juhco")
 
