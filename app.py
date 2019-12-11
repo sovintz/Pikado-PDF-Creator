@@ -17,6 +17,7 @@ def pregled():
         try:
             # get listing url
             listing = get_listing_data(request.form["listingURL"])
+            print(listing)
             return render_template("pregled.html", listing=listing)
         except:
             # redirect to home page
