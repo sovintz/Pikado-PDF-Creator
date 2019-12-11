@@ -16,6 +16,7 @@ def pregled():
     if request.method == "POST":
         try:
             # get listing url
+            print(request.form["listingURL"])
             listing = get_listing_data(request.form["listingURL"])
             return render_template("pregled.html", listing=listing)
         except:
