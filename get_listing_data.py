@@ -25,6 +25,7 @@ def get_listing_data(listing_url):
     print("pred request")
     #listing_page = urllib.request.urlopen(listing_url)
     listing_page = requests.get(listing_url)
+    print(listing_page.status_code)
     print("po request")
     print("pred juhco")
     soup = BeautifulSoup(listing_page.content, 'html.parser')
