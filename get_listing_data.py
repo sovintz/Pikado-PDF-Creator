@@ -24,7 +24,8 @@ def get_listing_data(listing_url):
     # Creates new request with the given listing URL
     print("pred request")
     #listing_page = urllib.request.urlopen(listing_url)
-    listing_page = requests.get(listing_url)
+    #listing_page = requests.get(listing_url)
+    listing_page = requests.get("https://www.google.si/")
     print(listing_page.status_code)
     print("po request")
     print("pred juhco")
