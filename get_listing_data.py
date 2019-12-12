@@ -24,8 +24,10 @@ def get_listing_data(listing_url):
     # Creates new request with the given listing URL
     print("pred request")
     #listing_page = urllib.request.urlopen(listing_url)
-    #listing_page = requests.get(listing_url)
-    listing_page = requests.get("https://www.google.si/")
+    headers = {
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+    }
+    listing_page = requests.get(listing_url, headers=headers)
     print(listing_page.status_code)
     print("po request")
     print("pred juhco")
