@@ -27,7 +27,10 @@ def get_listing_data(listing_url):
     headers = {
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
     }
-    listing_page = requests.get(listing_url, headers=headers)
+    session = requests.Session()
+    session.trust_env = False
+    listing_page = session.get(listing_url)
+    #listing_page = requests.get(listing_url, headers=headers)
     print(listing_page.status_code)
     print("po request")
     print("pred juhco")
