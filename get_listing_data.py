@@ -22,7 +22,8 @@ def get_listing_data(listing_url):
     }
 
     # Reverse Proxy
-    listing_url.replace("https://www.nepremicnine.net", "https://nepremicnine.sajtr.ga")
+    listing_url = listing_url.replace("https://www.nepremicnine.net", "https://nepremicnine.sajtr.ga")
+    print(listing_url)
     # Creates new request with the given listing URL
     listing_page = requests.get(listing_url)
     soup = BeautifulSoup(listing_page.content, 'html.parser')
