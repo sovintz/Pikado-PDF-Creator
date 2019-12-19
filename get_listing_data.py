@@ -21,24 +21,11 @@ def get_listing_data(listing_url):
         "images_array": []
     }
 
+    # Reverse Proxy
+    listing_url.replace("https://www.nepremicnine.net", "https://nepremicnine.sajtr.ga")
     # Creates new request with the given listing URL
-    print("pred request")
-    #listing_page = urllib.request.urlopen(listing_url)
-    headers = {
-        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
-        'referrer': 'https://google.si',
-    }
-    #session = requests.Session()
-    #session.trust_env = False
-    #listing_page = session.get(listing_url, headers=headers)
-    #listing_page = requests.get(listing_url, headers=headers)
-    listing_page = requests.get("https://nepremicnine.sajtr.ga/oglasi-prodaja/draveljska-gmajna-kamnogoriska-cesta-stanovanje_6262571/", headers=headers)
-    print(listing_page.status_code)
-    print("po request")
-    print("pred juhco")
+    listing_page = requests.get(listing_url)
     soup = BeautifulSoup(listing_page.content, 'html.parser')
-    print("nardi juhco")
-    #print(str(listing_page.content))
 
     # Gets listing's heading get basic  info
     listing_heading = soup.find("h1", {"class": "podrobnosti-naslov"}).text
