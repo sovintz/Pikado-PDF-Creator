@@ -3,7 +3,8 @@ from flask import render_template, make_response
 
 
 def create_pdf(title, offer, type_o, size, size_l, year, price, short, long, images_array_base64):
-    config = pdfkit.configuration(wkhtmltopdf="C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe")
+    #config = pdfkit.configuration(wkhtmltopdf="C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe")
+    config = pdfkit.configuration(wkhtmltopdf='./bin/wkhtmltopdf')
     options = {
         'page-size': 'A4',
         'encoding': "UTF-8",
