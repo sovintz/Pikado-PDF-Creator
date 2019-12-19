@@ -26,6 +26,7 @@ def get_listing_data(listing_url):
     #listing_page = urllib.request.urlopen(listing_url)
     headers = {
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+        'referrer': 'https://google.si',
     }
     #session = requests.Session()
     #session.trust_env = False
