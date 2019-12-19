@@ -29,7 +29,7 @@ def get_listing_data(listing_url):
     }
     session = requests.Session()
     session.trust_env = False
-    listing_page = session.get(listing_url)
+    listing_page = session.get(listing_url, headers=headers)
     #listing_page = requests.get(listing_url, headers=headers)
     print(listing_page.status_code)
     print("po request")
