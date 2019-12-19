@@ -32,13 +32,13 @@ def get_listing_data(listing_url):
     #session.trust_env = False
     #listing_page = session.get(listing_url, headers=headers)
     #listing_page = requests.get(listing_url, headers=headers)
-    listing_page = requests.get("https://headers.znidar.workers.dev", headers=headers)
+    listing_page = requests.get("https://nepremicnine.sajtr.ga/oglasi-prodaja/draveljska-gmajna-kamnogoriska-cesta-stanovanje_6262571/", headers=headers)
     print(listing_page.status_code)
     print("po request")
     print("pred juhco")
     soup = BeautifulSoup(listing_page.content, 'html.parser')
     print("nardi juhco")
-    print(str(listing_page.content))
+    #print(str(listing_page.content))
 
     # Gets listing's heading get basic  info
     listing_heading = soup.find("h1", {"class": "podrobnosti-naslov"}).text
