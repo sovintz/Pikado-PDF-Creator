@@ -7,7 +7,8 @@ def create_pdf(title, offer, type_o, size, size_l, year, price, short, long, ima
     if platform.system() == 'Windows':
         config = pdfkit.configuration(wkhtmltopdf="C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe")
     else:
-        config = pdfkit.configuration(wkhtmltopdf='wkhtmltopdf-pack')
+        config = pdfkit.configuration(wkhtmltopdf='./bin/wkhtmltopdf')
+    #config = pdfkit.configuration(wkhtmltopdf='wkhtmltopdf-pack-ng')
     options = {
         'page-size': 'A4',
         'encoding': "UTF-8",
