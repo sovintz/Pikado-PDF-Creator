@@ -22,7 +22,7 @@ def create_pdf(title, offer, type_o, size, size_l, year, price, short, long, ima
         'encoding': "UTF-8",
     }
     render = render_template('pdf_template.html', title=title, offer=offer, type_o=type_o, size=size, size_l=size_l, year=year, price=price, short=short, long=long, images_array_base64=images_array_base64)
-    pdf = pdfkit.from_string(render, False, options=None, configuration=config)
+    pdf = pdfkit.from_string(render, False, options=options, configuration=config)
     # create response from rendered PDF
     response = make_response(pdf)
     response.headers['Content-Type'] = 'application/pdf'
