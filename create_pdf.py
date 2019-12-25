@@ -4,7 +4,6 @@ import subprocess
 import pdfkit
 import platform
 from flask import render_template, make_response
-import pydf
 
 
 def create_pdf(title, offer, type_o, size, size_l, year, price, short, long, images_array_base64):
