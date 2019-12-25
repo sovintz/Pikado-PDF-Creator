@@ -1,14 +1,23 @@
+import os
+import subprocess
+
 import pdfkit
 import platform
 from flask import render_template, make_response
+import pydf
 
 
 def create_pdf(title, offer, type_o, size, size_l, year, price, short, long, images_array_base64):
-    if platform.system() == 'Windows':
-        config = pdfkit.configuration(wkhtmltopdf="C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe")
+    if 'DYNO' in os.environ:
+        print('loading wkhtmltopdf path on heroku')
+        WKHTMLTOPDF_CMD = subprocess.Popen(
+            ['which', os.environ.get('WKHTMLTOPDF_BINARY', 'wkhtmltopdf-pack')],
+            # Note we default to 'wkhtmltopdf' as the binary name
+            stdout=subprocess.PIPE).communicate()[0].strip()
     else:
-        config = pdfkit.configuration(wkhtmltopdf='./bin/wkhtmltopdf')
-    #config = pdfkit.configuration(wkhtmltopdf='wkhtmltopdf-pack-ng')
+        print('loading wkhtmltopdf path on localhost')
+        WKHTMLTOPDF_CMD = 'C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe'
+    config = pdfkit.configuration(wkhtmltopdf=WKHTMLTOPDF_CMD)
     options = {
         'page-size': 'A4',
         'encoding': "UTF-8",
