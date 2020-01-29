@@ -1,5 +1,3 @@
-# import urllib
-# import urllib.request
 import requests
 from bs4 import BeautifulSoup
 
@@ -7,8 +5,8 @@ from bs4 import BeautifulSoup
 def get_listing_data(listing_url):
     # Check if url is empty
     if not listing_url:
-        raise Exception("Empty URL")
         print("Empty URL")
+        raise Exception("Empty URL")
 
     # Creates dictionary for listing data
     listing_data = {
