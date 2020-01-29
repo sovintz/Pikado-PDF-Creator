@@ -126,7 +126,9 @@ def get_listing_data(listing_url):
     listing_images_links_list = []
     for tag in listing_images_tags_list:
         image_id = tag.get("data-rsbigimg").split("/")[-1]
-        image_link = "https://picbase.turbosist.si/slonep_oglasi2/" + image_id
+       # image_link = "https://picbase.turbosist.si/slonep_oglasi2/" + image_id
+        image_link = "https://picz.sajtr.ga/?url=https://picbase.turbosist.si/slonep_oglasi2/" + image_id
+        #print(image_link)
         listing_images_links_list.append(image_link)
 
     # Update the dictionary
@@ -140,13 +142,13 @@ def get_listing_data(listing_url):
     listing_data["long"] = listing_long_description
     listing_data["images_array"] = listing_images_links_list
 
-    print(listing_data["title"])
+    '''print(listing_data["title"])
     print(listing_data["type_o"])
     print(listing_data["size"])
     print(listing_data["size_l"])
     print(listing_data["year"])
     print(listing_data["price"])
     print(listing_data["short"])
-    print(listing_data["long"])
+    print(listing_data["long"])'''
 
     return listing_data
