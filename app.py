@@ -42,9 +42,9 @@ def pdf():
         long = request.form["long"]
         images_array = request.form.getlist("image")
         # create base64 images
-        images_array_base64 = img_to_base64(images_array)
+        #images_array_base64 = img_to_base64(images_array)
         # render the PDF
-        html = render_template('pdf_template.html', title=title, offer=offer, type_o=type_o, size=size, size_l=size_l, year=year, price=price, short=short, long=long, images_array_base64=images_array_base64)
+        html = render_template('pdf_template.html', title=title, offer=offer, type_o=type_o, size=size, size_l=size_l, year=year, price=price, short=short, long=long, images_array_base64=images_array)
         #html = render_template('report.html')
         return render_pdf(HTML(string=html))
         #return create_pdf(title=title, offer=offer, type_o=type_o, size=size, size_l=size_l, year=year, price=price, short=short, long=long, images_array_base64=images_array_base64)
