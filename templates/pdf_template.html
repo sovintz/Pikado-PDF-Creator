@@ -51,7 +51,7 @@
             bottom: 0;
             padding-bottom: 1cm;
             font-size: 10pt;
-            font-weight: lighter;
+            font-weight: 100;
             width: 100%;
         }
 
@@ -71,7 +71,7 @@
         html body article#page section h2 {
             text-align: left;
             padding:0pt 10pt 10pt 10pt;
-            font-weight: normal;
+            font-weight: 100;
         }
 
         /* Left side */
@@ -84,7 +84,7 @@
         html body article#page section#left p {
             display: block;
             font-size: 10pt;
-            font-weight: normal;
+            font-weight: 100;
             padding: 10pt;
             text-align: left;
         }
@@ -142,7 +142,7 @@
     <!-- Cover End -->
 
     <!-- Body Template Start -->
-    {% for image_base64_batch in images_array_base64|batch(3) %}
+    {% for image_batch in images_array|batch(3) %}
         <article id="page">
             <section id="left">
                 <div id="logo_mini">
@@ -181,8 +181,8 @@
                 {% endif %}
             </section>
             <section id="right">
-                {% for image_base64 in image_base64_batch %}
-                    <img id="picture" src="{{ image_base64 }}">
+                {% for image in image_batch %}
+                    <img id="picture" src="{{ image }}">
                 {% endfor %}
             </section>
         </article>
