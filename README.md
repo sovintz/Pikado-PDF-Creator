@@ -1,5 +1,5 @@
 # Pikado-PDF-Creator
-A simple web app for creating PDF realestate offers from online listings.
+A simple web app for creating PDF real estate offers from online listings.
 
 # Built With
 - [Flask](https://palletsprojects.com/p/flask/) (WSGI web application framework)
