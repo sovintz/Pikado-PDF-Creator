@@ -21,7 +21,8 @@ def get_listing_data(listing_url):
     }
 
     # Reverse Proxy
-    listing_url = listing_url.replace("https://www.nepremicnine.net", "https://nepremicnine.sovinc.dev")
+    # listing_url = listing_url.replace("https://www.nepremicnine.net", "https://nepremicnine.sovinc.dev")
+    listing_url = "https://fwd.sovinc.workers.dev/?url=" + listing_url
     print(listing_url)
     # Creates new request with the given listing URL
     listing_page = requests.get(listing_url)
@@ -125,8 +126,9 @@ def get_listing_data(listing_url):
     for tag in listing_images_tags_list:
         image_id = tag.get("data-rsbigimg").split("/")[-1]
         # image_link = "https://picbase.turbosist.si/slonep_oglasi2/" + image_id
-        #image_link = "https://picz.sajtr.ga/?url=https://picbase.turbosist.si/slonep_oglasi2/" + image_id
-        image_link = "https://picz.sovinc.dev/?url=https://img.nepremicnine.link//slonep_oglasi2/" + image_id
+        # image_link = "https://picz.sajtr.ga/?url=https://picbase.turbosist.si/slonep_oglasi2/" + image_id
+        # image_link = "https://picz.sovinc.dev/?url=https://img.nepremicnine.link//slonep_oglasi2/" + image_id
+        image_link = "https://fwd.sovinc.workers.dev/?url=https://img.nepremicnine.link//slonep_oglasi2/" + image_id
         #print(image_link)
         listing_images_links_list.append(image_link)
 
